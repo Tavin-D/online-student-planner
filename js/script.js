@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const noResults = document.getElementById("no-results");
 
     function filterAssignments() {
-        if (!assignmentList) return;
+        if (!assignmentList || !searchInput || !statusFilter) return;
 
         const searchText = searchInput.value.toLowerCase();
         const selectedStatus = statusFilter.value;
@@ -78,7 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        noResults.hidden = visibleCount > 0;
+        if (noResults) {
+            noResults.hidden = visibleCount > 0;
+        }
     }
 
     if (searchInput && statusFilter) {
@@ -93,11 +95,16 @@ document.addEventListener("DOMContentLoaded", function () {
             if (event.target.classList.contains("complete-btn")) {
                 const row = event.target.closest("tr");
 
+                if (!row) return;
+
                 row.dataset.status = "Completed";
 
                 const badge = row.querySelector(".status-badge");
-                badge.textContent = "Completed";
-                badge.className = "status-badge completed";
+
+                if (badge) {
+                    badge.textContent = "Completed";
+                    badge.className = "status-badge completed";
+                }
 
                 event.target.textContent = "Completed";
                 event.target.disabled = true;
@@ -120,11 +127,17 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
 
             const subject =
-                document.getElementById("study-subject").value;
+                document.getElementById("study-subject").value.trim();
             const date =
                 document.getElementById("study-date").value;
             const time =
                 document.getElementById("study-time").value;
+
+            // Make sure all required information is entered.
+            if (!subject || !date || !time) {
+                alert("Please enter a subject, date, and time before adding your study session.");
+                return;
+            }
 
             // Create a new list item for the session.
             const newSession = document.createElement("li");
@@ -134,9 +147,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             sessionList.appendChild(newSession);
 
+            // Clear the form after adding the session.
             studyForm.reset();
         });
     }
 
 });
-
