@@ -1,0 +1,116 @@
+
+/* Main website styling */
+body {
+    background-color: #f4f6fb;
+    color: #263247;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Navigation bar */
+.navbar {
+    background-color: #243b64;
+    padding: 15px;
+}
+
+.navbar-brand {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.nav-link {
+    margin-left: 15px;
+}
+
+/* Main page headings */
+h1 {
+    color: #243b64;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Reusable content cards */
+.planner-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    height: 100%;
+}
+
+/* Assignment status labels */
+.status-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.progress {
+    background-color: #fff0cc;
+    color: #805900;
+}
+
+.not-started {
+    background-color: #e6eaf1;
+    color: #40516b;
+}
+
+.completed {
+    background-color: #d9f3e2;
+    color: #176b38;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #315b9a;
+    border-color: #315b9a;
+}
+
+.btn-primary:hover {
+    background-color: #243b64;
+    border-color: #243b64;
+}
+
+/* Tables */
+.table {
+    vertical-align: middle;
+}
+
+/* Study progress bar */
+.progress-bar {
+    background-color: #315b9a;
+}
+
+/* Footer */
+footer {
+    background-color: #243b64;
+    color: white;
+    margin-top: 50px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .navbar-nav {
+        margin-top: 10px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+    }
+
+    .planner-card {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+}

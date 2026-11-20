@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Student Planner | Assignments</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Main navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Student Planner</a>
+
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="index.html">Dashboard</a>
+                    <a class="nav-link active" href="assignments.html">Assignments</a>
+                    <a class="nav-link" href="study-planner.html">Study Planner</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+
+        <section class="mb-4">
+            <h1>My Assignments</h1>
+            <p>Keep track of your coursework and stay ahead of deadlines.</p>
+        </section>
+
+        <!-- Search and filter -->
+        <section class="planner-card mb-4">
+            <h2>Find an Assignment</h2>
+
+            <input
+                type="text"
+                id="assignment-search"
+                class="form-control mb-3"
+                placeholder="Search assignments..."
+                aria-label="Search assignments"
+            >
+
+            <label for="status-filter" class="form-label">Filter by status</label>
+            <select id="status-filter" class="form-select">
+                <option value="all">All Assignments</option>
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </section>
+
+        <!-- Assignment list -->
+        <section class="planner-card">
+            <h2>Assignment List</h2>
+
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Assignment</th>
+                            <th>Course</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="assignment-list">
+                        <tr data-status="In Progress">
+                            <td>Final Web Development MVP</td>
+                            <td>Web Development</td>
+                            <td>November 22</td>
+                            <td><span class="status-badge progress">In Progress</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-success complete-btn">
+                                    Complete
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-status="Not Started">
+                            <td>Programming Assignment</td>
+                            <td>Programming</td>
+                            <td>November 24</td>
+                            <td><span class="status-badge not-started">Not Started</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-success complete-btn">
+                                    Complete
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr data-status="Not Started">
+                            <td>Cloud Computing Quiz</td>
+                            <td>Cloud Computing</td>
+                            <td>November 27</td>
+                            <td><span class="status-badge not-started">Not Started</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-success complete-btn">
+                                    Complete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="no-results" hidden>No assignments match your search.</p>
+        </section>
+
+        <section class="planner-card mt-4">
+            <h2>Stay on Track</h2>
+            <p>Check your assignments regularly and mark work complete when you finish it.</p>
+            <a href="study-planner.html" class="btn btn-primary">Open Study Planner</a>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-4">
+        <p>Online Student Planner &copy; 2026</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>
